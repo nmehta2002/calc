@@ -2,14 +2,10 @@
 #pragma once
 
 #include "EngineFactory.h"
-//***************************************************************************
-//***************************************************************************
 
-// Purpose:
-//
-// Helper class, enables engines to register with the EngineFactory
-//***************************************************************************
-//***************************************************************************
+/**
+ * Helper class, enables engines to register with the EngineFactory
+ */
 
 template <typename T>
 class EngineRegistrationHelper

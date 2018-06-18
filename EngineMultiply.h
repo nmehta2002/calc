@@ -1,18 +1,13 @@
 #pragma once
 
-//***************************************************************************
-//***************************************************************************
-
-// Purpose:
-//
-// Impelments an Engine that divides numbers.
-//***************************************************************************
-//***************************************************************************
 
 #include <memory>
 #include "Engine.h"
 #include "EngineFactory.h"
 
+/*
+ * Impelments an Engine to multiply a stream of numbers.
+ */
 class EngineMultiply : public Engine
 {
 public:

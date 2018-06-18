@@ -58,10 +58,18 @@ tstEngineDivide: $(OBJS) $(USER_OBJS) tstEngineDivide.o
 	@echo 'Finished building target: $@'
 	@echo ' '
 
+TST_OBJS += \
+./tstEngineDivide.o \
+./tstOperandStream.o 
+
+TST_PROG_OBJS += \
+./tstEngineDivide \
+./tstOperandStream 
+
 
 # Other Targets
 clean:
-	-$(RM) $(C++_DEPS)$(OBJS)$(C_DEPS)$(CC_DEPS)$(CPP_DEPS)$(EXECUTABLES)$(CXX_DEPS)$(C_UPPER_DEPS)$(PROG_OBJS)$(PROG_CC_DEPS)$(TST_OBJS) calc
+	-$(RM) $(C++_DEPS)$(OBJS)$(C_DEPS)$(CC_DEPS)$(CPP_DEPS)$(EXECUTABLES)$(CXX_DEPS)$(C_UPPER_DEPS)$(PROG_OBJS)$(PROG_CC_DEPS)$(TST_OBJS)$(TST_PROG_OBJS) calc
 	-@echo ' '
 
 .PHONY: all clean dependents

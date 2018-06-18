@@ -9,13 +9,15 @@ bool OperandStreamFile::getNext(double &aNext)
 {
   double nextValue;
 
-  //*************************************************************************
+  /*
+   *
+   *  The loop below reads the next value from the current file, if the current
+   * file has has reached EOF it will open the next file and read the first value
+   * from the next file.
+   * The loop should also handle empty files, by just skipping over them.
+   *
+   */
 
-  // The loop below reads the next value from the current file, if the current
-  // file has has reached EOF it will open the next file and read the first value
-  // from the next file.
-  // The loop should also handle empty files, by just skipping over them.
-  //
   while (true)
   {
     if (!_mPCurrentFile)

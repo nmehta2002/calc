@@ -5,7 +5,10 @@ EngineDivide.cc \
 EngineMultiply.cc \
 OperandStreamFile.cc \
 OperandStreamString.cc \
-calc.cc
+calc.cc \
+tstOperandStream.cc \
+tstEngineDivide.cc
+
 
 OBJS += \
 ./EngineFactory.o \
