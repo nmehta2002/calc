@@ -1,7 +1,19 @@
 #!/usr/bin/bash
+
+echo "========================="
+echo "Building"
 make clean
 make all
+echo "Build done."
 
+echo "========================="
+echo "Running tests"
 ./tstOperandStream
 ./tstEngineDivide
+./run_integ_tsts.py
+echo "Tests done."
+
+echo "========================="
+echo "Generating documentation"
 doxygen
+echo "Documentation done."
