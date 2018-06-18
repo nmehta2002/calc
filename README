@@ -2,8 +2,8 @@
 About the project
 ===============================================================================
 The calc project provides a frame-work to execute operations on a stream of 
-integers. Engines execute these operations, the framework allows users to add 
-new engines.
+integers. Each engine executes an operation on a stream of integers.  The 
+framework provides an API to add new engines or operations. 
 
 ===============================================================================
 How to build
@@ -57,5 +57,4 @@ calc command.  The engine will also be listed in output of ./calc help
 with the appropriate input options. It should also be easy to follow an 
 already existing engine like EngineDivide. Also the doc directoy has brief 
 documentation around the other classes in the frame-work.
-
 
