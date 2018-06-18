@@ -5,7 +5,7 @@
 
 void tstEngineDivide()
 {
-  std::cout<<"tstEngineDivide....";
+  std::cout<<"Testing tstEngineDivide....";
 
   const char *strs[] = {"1.0", "2.0"};
 
@@ -24,7 +24,7 @@ void tstEngineDivide()
 
 void tstEngineDivideNegative()
 {
-  std::cout<<"tstEngineDivideNegative....";
+  std::cout<<"Testing tstEngineDivideNegative....";
 
   const char *strs[] = {"1.0", "0.0"};
 
