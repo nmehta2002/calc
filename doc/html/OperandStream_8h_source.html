@@ -84,25 +84,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classOperandStream.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classOperandStream.html">OperandStream</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <a class="code" href="classOperandStream.html">OperandStream</a>() {}</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classOperandStream.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classOperandStream.html">OperandStream</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classOperandStream.html#afb56711826c242682058c9f17a8aed27">getNext</a>(<span class="keywordtype">double</span> &amp;aOutput) = 0;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="classOperandStream.html">OperandStream</a>() {}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="classOperandStream.html">OperandStream</a>() {}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classOperandStream.html#a3672627ee3694c797c7c4b5bb318fd82">getNext</a>(uint64_t &amp;aOutput) = 0;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="classOperandStream.html">OperandStream</a>() {}</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classOperandStream.html">OperandStream</a>&amp; operator =(<a class="code" href="classOperandStream.html">OperandStream</a> &amp;);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classOperandStream.html">OperandStream</a>(<a class="code" href="classOperandStream.html">OperandStream</a> &amp;);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classOperandStream.html">OperandStream</a>&amp; operator =(<a class="code" href="classOperandStream.html">OperandStream</a> &amp;);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
-<div class="ttc" id="classOperandStream_html_afb56711826c242682058c9f17a8aed27"><div class="ttname"><a href="classOperandStream.html#afb56711826c242682058c9f17a8aed27">OperandStream::getNext</a></div><div class="ttdeci">virtual bool getNext(double &amp;aOutput)=0</div></div>
-<div class="ttc" id="classOperandStream_html"><div class="ttname"><a href="classOperandStream.html">OperandStream</a></div><div class="ttdef"><b>Definition:</b> OperandStream.h:7</div></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classOperandStream.html">OperandStream</a>(<a class="code" href="classOperandStream.html">OperandStream</a> &amp;);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
+<div class="ttc" id="classOperandStream_html_a3672627ee3694c797c7c4b5bb318fd82"><div class="ttname"><a href="classOperandStream.html#a3672627ee3694c797c7c4b5bb318fd82">OperandStream::getNext</a></div><div class="ttdeci">virtual bool getNext(uint64_t &amp;aOutput)=0</div></div>
+<div class="ttc" id="classOperandStream_html"><div class="ttname"><a href="classOperandStream.html">OperandStream</a></div><div class="ttdef"><b>Definition:</b> OperandStream.h:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

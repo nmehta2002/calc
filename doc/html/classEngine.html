@@ -103,8 +103,8 @@ Inheritance diagram for Engine:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa63d5682910d885aa58fa44f347227ca"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEngine.html#aa63d5682910d885aa58fa44f347227ca">run</a> ()=0</td></tr>
-<tr class="separator:aa63d5682910d885aa58fa44f347227ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b3d4c02c3236480cfe333ac5c610f52"><td class="memItemLeft" align="right" valign="top">virtual uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEngine.html#a2b3d4c02c3236480cfe333ac5c610f52">run</a> ()=0</td></tr>
+<tr class="separator:a2b3d4c02c3236480cfe333ac5c610f52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract base class that represents a calculator <a class="el" href="classEngine.html">Engine</a>. Expect subclasses of engine to represent an operation like "multiply", "divide", "sum".</p>
@@ -113,13 +113,13 @@ Public Member Functions</h2></td></tr>
 <ul>
 <li>All implementers of <a class="el" href="classEngine.html">Engine</a> are expected to do the following:<ol type="1">
 <li>A static factory method that takes operandStream as input of the form below: static std::unique_ptr&lt;Engine&gt; make(std::unique_ptr&lt;OperandStream&gt; aPOperandStream);</li>
-<li>A <a class="el" href="classEngine.html#aa63d5682910d885aa58fa44f347227ca">run()</a> method that implements the engine specific computation and returns the result.</li>
+<li>A <a class="el" href="classEngine.html#a2b3d4c02c3236480cfe333ac5c610f52">run()</a> method that implements the engine specific computation and returns the result.</li>
 <li>Register the engine with the <a class="el" href="classEngineFactory.html">EngineFactory</a> using <a class="el" href="classEngineRegistrationHelper.html">EngineRegistrationHelper</a> Follow EngineDivide.cc, should be straight forward. </li>
 </ol>
 </li>
 </ul>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aa63d5682910d885aa58fa44f347227ca"></a>
+<a class="anchor" id="a2b3d4c02c3236480cfe333ac5c610f52"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -127,7 +127,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual double Engine::run </td>
+          <td class="memname">virtual uint64_t Engine::run </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -142,7 +142,7 @@ Public Member Functions</h2></td></tr>
 <p>Subclasses need to provide an implementation of this operation. The implementation will typically include some computation like "multiply", "divide", "sum" over a stream of integers. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p>Implemented in <a class="el" href="classEngineDivide.html#afac3f02c42de268096bb7003f2c53a3b">EngineDivide</a>, and <a class="el" href="classEngineMultiply.html#a0f5fde0338bcc77eb5a92a3fae3bbe73">EngineMultiply</a>.</p>
+<p>Implemented in <a class="el" href="classEngineDivide.html#a50d464823f96efd579924e66602df610">EngineDivide</a>, and <a class="el" href="classEngineMultiply.html#af2296d9156cad553d92f683a1948890c">EngineMultiply</a>.</p>
 
 </div>
 </div>
