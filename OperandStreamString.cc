@@ -4,14 +4,14 @@
 #include <string>
 #include <iostream>
 
-bool OperandStreamString::getNext(uint64_t &aNext)
+bool OperandStreamString::getNext(int64_t &aNext)
 {
   try
   {
     if (!(_mNextIdx < _mStrings.size()))
       return false;
 
-    aNext = std::stod(_mStrings[_mNextIdx]);
+    aNext = std::stoll(_mStrings[_mNextIdx]);
 
     _mNextIdx++;
 

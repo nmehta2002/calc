@@ -36,7 +36,7 @@ public:
    * "multiply", "divide", "sum" over a stream of integers.
    * @return
    */
-  virtual uint64_t run() = 0;
+  virtual int64_t run() = 0;
 
   virtual ~Engine() {}
 

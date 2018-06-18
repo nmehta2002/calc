@@ -34,7 +34,7 @@ class OperandStreamFile : public OperandStream
       }
     }
 
-    virtual bool getNext(uint64_t &aNext) final;
+    virtual bool getNext(int64_t &aNext) final;
 
     virtual ~OperandStreamFile() {}
 

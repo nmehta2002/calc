@@ -2,8 +2,8 @@
 About the project
 ===============================================================================
 The calc project provides a frame-work to execute operations on a stream of 
-numbers. Engines execute these operations, the framework allows users to add new 
-engines.
+integers. Engines execute these operations, the framework allows users to add 
+new engines.
 
 ===============================================================================
 How to build
@@ -15,7 +15,6 @@ Run:
 How to run
 ===============================================================================
 Run "./calc help" to get all the usage options.
-./calc help
 
 Some examples below:
 ./calc divider 4 2
@@ -32,7 +31,7 @@ Adding new engines should be straight forward.
 
   - run method
     e.g.
-    virtual double run() final;
+    virtual int64_t run() final;
 
   - static factory method
     e.g.
@@ -54,7 +53,7 @@ Adding new engines should be straight forward.
     ./build_and_run_tsts
 
 Thats it, once you do the above, the engine should now be callable from the 
-calc command.  The engine should will also be listed in output of ./calc help
+calc command.  The engine will also be listed in output of ./calc help
 with the appropriate input options. It should also be easy to follow an 
 already existing engine like EngineDivide. Also the doc directoy has brief 
 documentation around the other classes in the frame-work.

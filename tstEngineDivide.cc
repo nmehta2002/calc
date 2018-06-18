@@ -7,7 +7,7 @@ void tstEngineDivide()
 {
   std::cout<<"Testing tstEngineDivide....";
 
-  const char *strs[] = {"4", "2"};
+  const char *strs[] = {"-4", "2"};
 
   std::unique_ptr<OperandStream> pOpStreamString(new OperandStreamString(strs, 2));
 
@@ -15,7 +15,7 @@ void tstEngineDivide()
 
   auto actualResult = pEngineDivide->run();
 
-  assert(actualResult == 2);
+  assert(actualResult == -2);
 
   std::cout<<"success"<<std::endl;
 

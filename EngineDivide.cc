@@ -12,16 +12,16 @@ static EngineRegistrationHelper<EngineDivide>
       EngineFactory::ENGINE_IN_OPT_FILE_LIST});
 
 
-uint64_t EngineDivide::run()
+int64_t EngineDivide::run()
 {
-  uint64_t result;
+  int64_t result;
 
   if (!_mPOperandStream->getNext(result))
   {
     throw std::runtime_error("Null input");
   }
 
-  uint64_t operand;
+  int64_t operand;
 
   while (_mPOperandStream->getNext(operand))
   {

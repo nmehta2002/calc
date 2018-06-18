@@ -18,10 +18,10 @@ std::string makeEngineUsageStr(
   switch(aInputOpt)
   {
     case EngineFactory::ENGINE_IN_OPT_NUMBER_LIST:
-      ostream<<"<number1> [<number2>]";
+      ostream<<"<number1> [<number2> <number3> ....]";
       break;
     case EngineFactory::ENGINE_IN_OPT_FILE_LIST:
-      ostream<<"<file1> [<file2>]";
+      ostream<<"<file1> [<file2> <file3> ....]";
       break;
   }
   return(ostream.str());

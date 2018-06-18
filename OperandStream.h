@@ -22,7 +22,7 @@ class OperandStream
    *  If no more elements left returns false.
    *
    */
-  virtual bool getNext(uint64_t &aOutput) = 0;
+  virtual bool getNext(int64_t &aOutput) = 0;
 
   virtual ~OperandStream() {}
 
