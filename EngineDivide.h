@@ -17,12 +17,14 @@ class EngineDivide : public Engine
 {
 public:
 
-  EngineDivide():Engine()
+  EngineDivide(std::unique_ptr<OperandStream> aPOperandStream):
+    Engine(),
+    _mPOperandStream(std::move(aPOperandStream))
   { }
 
-  static std::unique_ptr<Engine> make();
+  static std::unique_ptr<Engine> make(std::unique_ptr<OperandStream> aPOperandStream);
 
-  virtual double run(OperandStream& operandStream);
+  virtual double run();
 
   virtual ~EngineDivide() {}
 
@@ -32,6 +34,7 @@ private:
 
   EngineDivide(EngineDivide &);
 
+  std::unique_ptr<OperandStream> _mPOperandStream;
 
 };
 

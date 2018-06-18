@@ -20,7 +20,7 @@ public:
 
   Engine() {}
 
-  virtual double run(OperandStream &operandStream) = 0;
+  virtual double run() = 0;
 
   virtual ~Engine() {}
 

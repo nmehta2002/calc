@@ -33,7 +33,7 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: calc
+all: calc tstOperandStream tstEngineDivide
 
 # Tool invocations
 calc: $(OBJS) $(USER_OBJS) $(PROG_OBJS)

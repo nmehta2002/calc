@@ -16,9 +16,9 @@ class OperandStreamFile : public OperandStream
   public:
 
     OperandStreamFile(
-        const char* aFiles[],
-        uint32_t    aCount,
-        const bool  implicitTxtExt = true):
+        const char* const* aFiles,
+        uint32_t            aCount,
+        const bool          implicitTxtExt = true):
       _mPCurrentFile(nullptr),
       _mNextFileIndex(0)
     {
@@ -35,7 +35,7 @@ class OperandStreamFile : public OperandStream
       }
     }
 
-    virtual bool getNext(double &a_next);
+    virtual bool getNext(double &aNext);
 
     virtual ~OperandStreamFile() {}
 

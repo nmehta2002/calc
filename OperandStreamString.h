@@ -14,7 +14,7 @@ class OperandStreamString : public OperandStream
 {
   public:
 
-    OperandStreamString(const char* aStrings[], int aCount):
+    OperandStreamString(const char* const* aStrings, int aCount):
       _mNextIdx(0)
     {
       for (int i = 0; i < aCount; i++)

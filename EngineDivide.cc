@@ -11,18 +11,18 @@ static EngineRegistrationHelper<EngineDivide>
       EngineFactory::ENGINE_IN_OPT_FILE_LIST});
 
 
-double EngineDivide::run(OperandStream& operandStream)
+double EngineDivide::run()
 {
   double result;
 
-  if (!operandStream.getNext(result))
+  if (!_mPOperandStream->getNext(result))
   {
     throw std::runtime_error("Null input");
   }
 
   double operand;
 
-  while (operandStream.getNext(operand))
+  while (_mPOperandStream->getNext(operand))
   {
     // Checking for divide by zero.
     if (operand == 0)
@@ -37,8 +37,8 @@ double EngineDivide::run(OperandStream& operandStream)
 }
 
 // static
-std::unique_ptr<Engine> EngineDivide::make()
+std::unique_ptr<Engine> EngineDivide::make(std::unique_ptr<OperandStream> aPOperandStream)
 {
-  std::unique_ptr<Engine> p(new EngineDivide);
+  std::unique_ptr<Engine> p(new EngineDivide(std::move(aPOperandStream)));
   return p;
 }

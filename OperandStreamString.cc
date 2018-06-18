@@ -20,14 +20,14 @@
 #include <string>
 #include <iostream>
 
-bool OperandStreamString::getNext(double &a_next)
+bool OperandStreamString::getNext(double &aNext)
 {
   try
   {
     if (!(_mNextIdx < _mStrings.size()))
       return false;
 
-    a_next = std::stod(_mStrings[_mNextIdx]);
+    aNext = std::stod(_mStrings[_mNextIdx]);
 
     _mNextIdx++;
 

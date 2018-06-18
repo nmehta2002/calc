@@ -21,7 +21,7 @@ class OperandStream
   // Sets output to the next element and returns true.
   // If the stream has reached its end, returns false.
 
-  virtual bool getNext(double &output) = 0;
+  virtual bool getNext(double &aOutput) = 0;
 
   virtual ~OperandStream() {}
 

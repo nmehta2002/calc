@@ -38,35 +38,35 @@ void EngineFactory::
 }
 
 // static
-std::unique_ptr<Engine> EngineFactory::make(const char *engineName, char *engineInput[], int num_args)
+std::unique_ptr<Engine> EngineFactory::make(const char *aEngineName, char *aEngineInput[], int aNumArgs)
 {
   try
   {
-    EngineMapEntry &engineMapEntry = nameToEngineMap.at(engineName);
+    EngineMapEntry &engineMapEntry = nameToEngineMap.at(aEngineName);
 
     // If here means found a good engine to run
+    std::unique_ptr<OperandStream> pOperandStream =
+      makeOperandStream(aEngineName, aEngineInput, aNumArgs);
 
-    std::unique_ptr<Engine> p_engine = engineMapEntry.factoryFn();
-
-    return (p_engine);
+    return(engineMapEntry.factoryFn(std::move(pOperandStream)));
 
   }catch(std::out_of_range &ofr)
   {
     std::ostringstream sstream;
-    sstream<<"Invalid engine name :"<<engineName<<std::endl;
+    sstream<<"Invalid engine name :"<<aEngineName<<std::endl;
     throw std::invalid_argument(sstream.str());
   }
 }
 
 //static
 std::unique_ptr<OperandStream>
-EngineFactory::makeOperandStream(const char* engineName, char *engineInput[], int num_args)
+EngineFactory::makeOperandStream(const char* aEngineName, char *aEngineInput[], int aNumArgs)
 {
   std::unique_ptr<OperandStream> pOperandStream;
 
-  EngineMapEntry &engineMapEntry = nameToEngineMap.at(engineName);
+  EngineMapEntry &engineMapEntry = nameToEngineMap.at(aEngineName);
 
-  auto opt = detectInputOpt(engineInput[0][0]);
+  auto opt = detectInputOpt(aEngineInput[0][0]);
 
   if (engineMapEntry.inputOpts.find(opt) == engineMapEntry.inputOpts.end())
   {
@@ -81,11 +81,11 @@ EngineFactory::makeOperandStream(const char* engineName, char *engineInput[], in
   switch (opt)
   {
     case ENGINE_IN_OPT_FILE_LIST:
-      pOperandStream.reset(new OperandStreamFile(engineInput, num_args));
+      pOperandStream.reset(new OperandStreamFile(aEngineInput, aNumArgs));
       break;
 
     case ENGINE_IN_OPT_NUMBER_LIST:
-      pOperandStream.reset(new OperandStreamString(engineInput, num_args));
+      pOperandStream.reset(new OperandStreamString(aEngineInput, aNumArgs));
       break;
   };
 
@@ -95,11 +95,11 @@ EngineFactory::makeOperandStream(const char* engineName, char *engineInput[], in
 //*****************************************************************************
 
 // Maps enum option to a string.
-std::string EngineFactory::inputOptionStr(EngineFactory::EngineInputOption opt)
+std::string EngineFactory::inputOptionStr(EngineFactory::EngineInputOption aOpt)
 {
   std::string result;
 
-  switch(opt)
+  switch(aOpt)
   {
     case ENGINE_IN_OPT_FILE_LIST:
       result = "file_list";
@@ -125,9 +125,9 @@ std::string EngineFactory::inputOptionStr(EngineFactory::EngineInputOption opt)
 
 //static
 EngineFactory::EngineInputOption
-EngineFactory::detectInputOpt(char firstChar)
+EngineFactory::detectInputOpt(char aFirstChar)
 {
-  if (isalpha(firstChar))
+  if (isalpha(aFirstChar))
   {
     return ENGINE_IN_OPT_FILE_LIST;
   }

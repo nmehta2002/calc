@@ -78,10 +78,7 @@ int main(int argc, char* argv[])
     std::unique_ptr<Engine> pEngine =
         EngineFactory::make(engineName, &argv[2], argc - 2);
 
-    std::unique_ptr<OperandStream> pOperandStream =
-        EngineFactory::makeOperandStream(engineName, &argv[2], argc - 2);
-
-    double result = pEngine->run(*pOperandStream);
+    double result = pEngine->run();
 
     std::cout<<"Engine result is : "<<result<<std::endl;
 

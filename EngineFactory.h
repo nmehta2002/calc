@@ -11,7 +11,8 @@ class EngineFactory
 {
 public:
 
-  typedef std::unique_ptr<Engine>(*EngineFactoryFn)() ;
+  typedef std::unique_ptr<Engine>(*EngineFactoryFn)(
+      std::unique_ptr<OperandStream> aPOpStream) ;
 
   enum EngineInputOption
   {
@@ -29,16 +30,16 @@ public:
                              EngineFactoryFn                   aEngineFactoryFn,
                              const std::set<EngineInputOption> aInputOpts);
 
-  static std::unique_ptr<Engine> make(const char *engineName,
-                                      char       *engineInput[],
-                                      int         num_args);
+  static std::unique_ptr<Engine> make(const char *aEngineName,
+                                      char       *aEngineInput[],
+                                      int         aNumArgs);
 
 
 
   static std::unique_ptr<OperandStream>
-    makeOperandStream(const char  *engineName,
-                      char        *engineInput[],
-                      int          num_args);
+    makeOperandStream(const char  *aEngineName,
+                      char        *aEngineInput[],
+                      int          aNumArgs);
 
   struct EngineEntry
   {

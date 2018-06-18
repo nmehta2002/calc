@@ -5,9 +5,9 @@
 #include <cassert>
 
 
-bool OperandStreamFile::getNext(double &a_next)
+bool OperandStreamFile::getNext(double &aNext)
 {
-  double next_value;
+  double nextValue;
 
   //*************************************************************************
 
@@ -26,10 +26,10 @@ bool OperandStreamFile::getNext(double &a_next)
 
     // If here _mPCurrentFile has a good open file.
 
-    if (((*_mPCurrentFile) >> next_value))
+    if (((*_mPCurrentFile) >> nextValue))
     {
       // Got a new value return it.
-      a_next = next_value;
+      aNext = nextValue;
       return true;
     }
     else

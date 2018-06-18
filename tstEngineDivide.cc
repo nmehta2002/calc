@@ -9,12 +9,11 @@ void tstEngineDivide()
 
   const char *strs[] = {"1.0", "2.0"};
 
-  OperandStreamString opStreamString(strs, 2);
-  OperandStream& opStream = opStreamString;
+  std::unique_ptr<OperandStream> pOpStreamString(new OperandStreamString(strs, 2));
 
-  std::unique_ptr<Engine> pEngineDivide(EngineDivide::make());
+  std::unique_ptr<Engine> pEngineDivide(EngineDivide::make(std::move(pOpStreamString)));
 
-  auto actualResult = pEngineDivide->run(opStream);
+  auto actualResult = pEngineDivide->run();
 
   assert(actualResult == 0.5);
 
@@ -28,14 +27,13 @@ void tstEngineDivideNegative()
 
   const char *strs[] = {"1.0", "0.0"};
 
-  OperandStreamString opStreamString(strs, 2);
-  OperandStream& opStream = opStreamString;
+  std::unique_ptr<OperandStream> pOpStreamString(new OperandStreamString(strs, 2));
 
-  std::unique_ptr<Engine> pEngineDivide(EngineDivide::make());
+  std::unique_ptr<Engine> pEngineDivide(EngineDivide::make(std::move(pOpStreamString)));
 
   try
   {
-    pEngineDivide->run(opStream);
+    pEngineDivide->run();
     assert(false);
   }
   catch(std::overflow_error& ofe)

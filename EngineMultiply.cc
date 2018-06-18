@@ -9,18 +9,18 @@ static EngineRegistrationHelper<EngineMultiply>
                      { EngineFactory::ENGINE_IN_OPT_FILE_LIST});
 
 
-double EngineMultiply::run(OperandStream& operandStream)
+double EngineMultiply::run()
 {
   double result;
 
-  if (!operandStream.getNext(result))
+  if (!_mPOperandStream->getNext(result))
   {
     throw std::runtime_error("Null input");
   }
 
   double operand;
 
-  while (operandStream.getNext(operand))
+  while (_mPOperandStream->getNext(operand))
   {
     result *= operand;
   }
@@ -29,8 +29,8 @@ double EngineMultiply::run(OperandStream& operandStream)
 }
 
 // static
-std::unique_ptr<Engine> EngineMultiply::make()
+std::unique_ptr<Engine> EngineMultiply::make(std::unique_ptr<OperandStream> aPOperandStream)
 {
-  std::unique_ptr<Engine> p(new EngineMultiply);
+  std::unique_ptr<Engine> p(new EngineMultiply(std::move(aPOperandStream)));
   return p;
 }

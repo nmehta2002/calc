@@ -17,12 +17,14 @@ class EngineMultiply : public Engine
 {
 public:
 
-  EngineMultiply():Engine()
+  EngineMultiply(std::unique_ptr<OperandStream> aPOperandStream):
+    Engine(),
+    _mPOperandStream(std::move(aPOperandStream))
   { }
 
-  static std::unique_ptr<Engine> make();
+  static std::unique_ptr<Engine> make(std::unique_ptr<OperandStream> aPOperandStream);
 
-  virtual double run(OperandStream& p_operandStream);
+  virtual double run();
 
   virtual ~EngineMultiply() {}
 
@@ -31,5 +33,7 @@ private:
   Engine& operator =(const Engine &);
 
   EngineMultiply(EngineMultiply &);
+
+  std::unique_ptr<OperandStream> _mPOperandStream;
 
 };

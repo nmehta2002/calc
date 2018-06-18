@@ -33,12 +33,12 @@ void testOpStreamString()
 
 }
 
-void setupFile(std::string name, std::function<void(std::ofstream&)> populateFn)
+void setupFile(std::string aName, std::function<void(std::ofstream&)> aPopulateFn)
 {
   std::ofstream file;
 
-  file.open (name, ios::out | ios::trunc);
-  populateFn(file);
+  file.open (aName, ios::out | ios::trunc);
+  aPopulateFn(file);
   file.close();
 }
 
