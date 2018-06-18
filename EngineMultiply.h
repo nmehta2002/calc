@@ -5,7 +5,7 @@
 #include "Engine.h"
 #include "EngineFactory.h"
 
-/*
+/**
  * Impelments an Engine to multiply a stream of numbers.
  */
 class EngineMultiply : public Engine
@@ -17,9 +17,17 @@ public:
     _mPOperandStream(std::move(aPOperandStream))
   { }
 
+  /**
+   * A factory method to instantiate this engine.
+   *
+   * @param aPOperandStream: Input stream for the engine. The caller yields
+   * ownership of the operandStream and expects the engine to free it.
+   * @return The constructured engine, expects the caller to take
+   * ownership of this engine and free it when its done.
+   */
   static std::unique_ptr<Engine> make(std::unique_ptr<OperandStream> aPOperandStream);
 
-  virtual double run();
+  double run() final;
 
   virtual ~EngineMultiply() {}
 

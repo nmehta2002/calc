@@ -6,10 +6,9 @@
 #include <vector>
 #include "OperandStream.h"
 
-//*****************************************************************************
-//
-// Class that implements a stream sourced from a set of files.
-//
+/**
+ * Class that implements a stream sourced from a set of files.
+ */
 
 class OperandStreamFile : public OperandStream
 {

@@ -5,21 +5,35 @@
 #include "Engine.h"
 #include "EngineFactory.h"
 
-/*
- * Implements an engine to divide a stream of numbers.
+/**
+ * Impelments an Engine to divide a stream of numbers.
  */
 class EngineDivide : public Engine
 {
 public:
 
+  /**
+   *
+   * @param aPOperandStream
+   */
   EngineDivide(std::unique_ptr<OperandStream> aPOperandStream):
     Engine(),
     _mPOperandStream(std::move(aPOperandStream))
   { }
 
+  /**
+   * A factory method to instantiate this engine.
+   *
+   * @param aPOperandStream: Input stream for the engine. The caller yields
+   * ownership of the operandStream and expects the engine to free it,
+   * when the engine is destroyed.
+   * @return The constructured engine, expects the caller to take
+   * ownership of this engine and free it when its done.
+   *
+   */
   static std::unique_ptr<Engine> make(std::unique_ptr<OperandStream> aPOperandStream);
 
-  virtual double run();
+  virtual double run() final;
 
   virtual ~EngineDivide() {}
 

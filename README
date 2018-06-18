@@ -1,0 +1,62 @@
+===============================================================================
+About the project
+===============================================================================
+The calc project provides a frame-work to execute operations on a stream of 
+numbers. Engines execute these operations, the framework allows users to add new 
+engine.
+
+===============================================================================
+How to build
+===============================================================================
+Run:
+./build_and_run_tsts
+
+===============================================================================
+How to run
+===============================================================================
+Run "./calc help" to get all the usage options.
+./calc help
+
+Some examples below:
+./calc divider 1 2
+
+./calc divider <file1> <file2>
+
+===============================================================================
+How to add new engines
+===============================================================================
+Adding new engines should be straight forward.
+- Subclass Engine and provide the implementation of the following:
+
+  - Constructor
+
+  - run method
+    e.g.
+    virtual double run() final;
+
+  - static factory method
+    e.g.
+    static std::unique_ptr<Engine> make(
+      std::unique_ptr<OperandStream> aPOperandStream);
+
+  - In the .cc file for the engine register the engine with the factory and 
+    specify the input options supported by the engine.
+    e.g.
+    static EngineRegistrationHelper<EngineDivide> engineRegistration(
+      "divider",
+      { EngineFactory::ENGINE_IN_OPT_NUMBER_LIST,
+        EngineFactory::ENGINE_IN_OPT_FILE_LIST});
+
+  - Add the new engine modules to subdir.mk, follow examples for other 
+    pre-existing engines.
+
+  - Compile and build.
+    ./build_and_run_tsts
+
+Thats it, once you do the above, the engine should now be callable from the 
+calc command.  The engine should will also be listed in output of ./calc help
+with the appropriate input options. It should be also easy to follow an 
+already existing engine like EngineDivide. Also the doc directoy has brief 
+documentation around the other classes in the frame-work.
+
+

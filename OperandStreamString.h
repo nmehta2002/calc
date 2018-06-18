@@ -5,11 +5,9 @@
 #include <string>
 #include <vector>
 
-//*****************************************************************************
-//
-// Class that implements a stream sourced from a set of strings.
-//
-
+/**
+ * Class that implements a stream sourced from a set of strings.
+ */
 class OperandStreamString : public OperandStream
 {
   public:

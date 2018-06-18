@@ -46,7 +46,7 @@ std::unique_ptr<Engine> EngineFactory::make(const char *aEngineName, char *aEngi
 
     // If here means found a good engine to run
     std::unique_ptr<OperandStream> pOperandStream =
-      makeOperandStream(aEngineName, aEngineInput, aNumArgs);
+      _makeOperandStream(aEngineName, aEngineInput, aNumArgs);
 
     return(engineMapEntry.factoryFn(std::move(pOperandStream)));
 
@@ -60,7 +60,7 @@ std::unique_ptr<Engine> EngineFactory::make(const char *aEngineName, char *aEngi
 
 //static
 std::unique_ptr<OperandStream>
-EngineFactory::makeOperandStream(const char* aEngineName, char *aEngineInput[], int aNumArgs)
+EngineFactory::_makeOperandStream(const char* aEngineName, char *aEngineInput[], int aNumArgs)
 {
   std::unique_ptr<OperandStream> pOperandStream;
 

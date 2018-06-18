@@ -1,6 +1,6 @@
 #pragma once
 
-/*
+/**
  * Abstract base class that represents a stream of operands read from some
  * source, e.g. sources could be a command line or a list of files.
  */
@@ -10,9 +10,15 @@ class OperandStream
 
   OperandStream() {}
 
-  /*
-   * Sets output to the next element and returns true.
-   * If the stream has reached its end, returns false.
+  /**
+   * Retrieves the next element from the stream.
+   * Sets aOutput to the next element.
+   *
+   * @param aOutput
+   * @return
+   *  If unread elements exists returns true and element is returned in aOutput
+   *  If no more elements left returns false.
+   *
    */
   virtual bool getNext(double &aOutput) = 0;
 

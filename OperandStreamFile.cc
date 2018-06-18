@@ -9,7 +9,7 @@ bool OperandStreamFile::getNext(double &aNext)
 {
   double nextValue;
 
-  /*
+  /**
    *
    *  The loop below reads the next value from the current file, if the current
    * file has has reached EOF it will open the next file and read the first value

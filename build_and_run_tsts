@@ -13,7 +13,3 @@ echo "Running tests"
 ./run_integ_tsts.py
 echo "Tests done."
 
-echo "========================="
-echo "Generating documentation"
-doxygen
-echo "Documentation done."
