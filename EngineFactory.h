@@ -82,9 +82,23 @@ private:
 
   static std::map<std::string, EngineFactory::EngineMapEntry> nameToEngineMap;
 
-  static EngineInputOption detectInputOpt(char firstChar);
+  /**
+   *
+   * Detects if the input is either a file-list or a list of numbers.
+   * Uses the first character of the first input string.
+   * If the input is a list of files, would expect the first character of the
+   * file-name to be a letter.
+   * @param aFirstChar
+   * @return
+   */
+  static EngineInputOption _detectInputOpt(char firstChar);
 
-  static std::string inputOptionStr(EngineFactory::EngineInputOption opt);
+  /**
+   * Maps enum option to a string.
+   * @param aOpt
+   * @return
+   */
+  static std::string _inputOptionStr(EngineFactory::EngineInputOption opt);
 
 };
 

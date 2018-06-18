@@ -46,10 +46,9 @@ void testOpStreamFile()
 {
   std::cout<<"Testing OperandStreamFile...";
 
-  //**********************************************************************
-  //
-  // Setup a file with multiple lines and multiple values in the same line.
-  //
+  /**
+   * Setup a file with multiple lines and multiple values in the same line.
+   */
 
   setupFile(
     "input_complex.txt",

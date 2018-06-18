@@ -66,12 +66,12 @@ EngineFactory::_makeOperandStream(const char* aEngineName, char *aEngineInput[],
 
   EngineMapEntry &engineMapEntry = nameToEngineMap.at(aEngineName);
 
-  auto opt = detectInputOpt(aEngineInput[0][0]);
+  auto opt = _detectInputOpt(aEngineInput[0][0]);
 
   if (engineMapEntry.inputOpts.find(opt) == engineMapEntry.inputOpts.end())
   {
     std::ostringstream sstream;
-    sstream<<"Input option "<<inputOptionStr(opt)<<" not supported."<<std::endl;
+    sstream<<"Input option "<<_inputOptionStr(opt)<<" not supported."<<std::endl;
     throw std::invalid_argument(sstream.str());
   }
 
@@ -92,10 +92,8 @@ EngineFactory::_makeOperandStream(const char* aEngineName, char *aEngineInput[],
   return (std::move(pOperandStream));
 }
 
-//*****************************************************************************
-
-// Maps enum option to a string.
-std::string EngineFactory::inputOptionStr(EngineFactory::EngineInputOption aOpt)
+//static
+std::string EngineFactory::_inputOptionStr(EngineFactory::EngineInputOption aOpt)
 {
   std::string result;
 
@@ -115,17 +113,9 @@ std::string EngineFactory::inputOptionStr(EngineFactory::EngineInputOption aOpt)
   return (result);
 }
 
-
-//*****************************************************************************
-
-// Detects if the input is either a file-list or a list of numbers.
-// Uses the first character of the first input string.
-// If the input is a list of files, would expect the first character of the
-// file-name to be a letter.
-
 //static
 EngineFactory::EngineInputOption
-EngineFactory::detectInputOpt(char aFirstChar)
+EngineFactory::_detectInputOpt(char aFirstChar)
 {
   if (isalpha(aFirstChar))
   {
