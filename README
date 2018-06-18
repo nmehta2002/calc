@@ -3,7 +3,7 @@ About the project
 ===============================================================================
 The calc project provides a frame-work to execute operations on a stream of 
 numbers. Engines execute these operations, the framework allows users to add new 
-engine.
+engines.
 
 ===============================================================================
 How to build
@@ -18,7 +18,7 @@ Run "./calc help" to get all the usage options.
 ./calc help
 
 Some examples below:
-./calc divider 1 2
+./calc divider 4 2
 
 ./calc divider <file1> <file2>
 
@@ -55,7 +55,7 @@ Adding new engines should be straight forward.
 
 Thats it, once you do the above, the engine should now be callable from the 
 calc command.  The engine should will also be listed in output of ./calc help
-with the appropriate input options. It should be also easy to follow an 
+with the appropriate input options. It should also be easy to follow an 
 already existing engine like EngineDivide. Also the doc directoy has brief 
 documentation around the other classes in the frame-work.
 
