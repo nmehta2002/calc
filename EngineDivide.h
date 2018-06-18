@@ -33,7 +33,7 @@ public:
    */
   static std::unique_ptr<Engine> make(std::unique_ptr<OperandStream> aPOperandStream);
 
-  virtual double run() final;
+  virtual uint64_t run() final;
 
   virtual ~EngineDivide() {}
 

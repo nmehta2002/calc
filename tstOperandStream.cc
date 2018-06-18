@@ -11,21 +11,21 @@ void testOpStreamString()
 {
   std::cout<<"Testing OperandStreamString...";
 
-  const char *strs[] = {"1.0", "2.2"};
+  const char *strs[] = {"1", "2"};
 
   OperandStreamString opStreamString(strs, 2);
   OperandStream& opStream = opStreamString;
 
-  std::vector<double> actualResult;
+  std::vector<uint64_t> actualResult;
 
-  double item;
+  uint64_t item;
 
   while(opStream.getNext(item))
   {
     actualResult.push_back(item);
   }
 
-  std::vector<double> expectedResult {1.0, 2.2};
+  std::vector<uint64_t> expectedResult {1, 2};
 
   assert(expectedResult == actualResult);
 
@@ -54,8 +54,8 @@ void testOpStreamFile()
     "input_complex.txt",
     [](std::ofstream& file)
     {
-      file<<2.0<<" "<<4.0<<std::endl;
-      file<<8.0;
+      file<<2<<" "<<4<<std::endl;
+      file<<8;
     });
 
   const char *strs[] = {"input_complex"};
@@ -64,16 +64,16 @@ void testOpStreamFile()
 
   OperandStream& opStream = opStreamFile;
 
-  std::vector<double> actualResult;
+  std::vector<uint64_t> actualResult;
 
-  double item;
+  uint64_t item;
 
   while(opStream.getNext(item))
   {
     actualResult.push_back(item);
   }
 
-  std::vector<double> expectedResult {2.0, 4.0, 8.0};
+  std::vector<uint64_t> expectedResult {2, 4, 8};
 
   assert(expectedResult == actualResult);
 
@@ -91,16 +91,16 @@ void testOpStreamFileMultipleFiles()
     "input1.txt",
     [](std::ofstream& file)
     {
-      file<<2.0<<" "<<4.0<<std::endl;
-      file<<8.0;
+      file<<2<<" "<<4<<std::endl;
+      file<<8;
     });
 
   setupFile(
     "input2.txt",
     [](std::ofstream& file)
     {
-      file<<4.0<<std::endl;
-      file<<8.0;
+      file<<4<<std::endl;
+      file<<8;
     });
 
   setupFile(
@@ -112,7 +112,7 @@ void testOpStreamFileMultipleFiles()
     "input4.txt",
     [](std::ofstream& file)
     {
-      file<<10.0<<std::endl;
+      file<<10<<std::endl;
     });
 
 
@@ -122,16 +122,16 @@ void testOpStreamFileMultipleFiles()
 
   OperandStream& opStream = opStreamFile;
 
-  std::vector<double> actualResult;
+  std::vector<uint64_t> actualResult;
 
-  double item;
+  uint64_t item;
 
   while(opStream.getNext(item))
   {
     actualResult.push_back(item);
   }
 
-  std::vector<double> expectedResult {2.0, 4.0, 8.0, 4.0, 8.0, 10.0};
+  std::vector<uint64_t> expectedResult {2, 4, 8, 4, 8, 10};
 
   assert(expectedResult == actualResult);
 
@@ -153,7 +153,7 @@ void testOpStreamFileNegative()
 
     OperandStream& opStream = opStreamFile;
 
-    double item;
+    uint64_t item;
     try
     {
       opStream.getNext(item);
@@ -183,7 +183,7 @@ void testOpStreamFileNegative()
 
     OperandStream& opStream = opStreamFile;
 
-    double item;
+    uint64_t item;
     try
     {
       opStream.getNext(item);

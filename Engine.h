@@ -1,6 +1,7 @@
 #pragma once
 
 #include "OperandStream.h"
+#include <cstdint>
 
 /**
  * Abstract base class that represents a calculator Engine. Expect subclasses of
@@ -35,7 +36,7 @@ public:
    * "multiply", "divide", "sum" over a stream of integers.
    * @return
    */
-  virtual double run() = 0;
+  virtual uint64_t run() = 0;
 
   virtual ~Engine() {}
 

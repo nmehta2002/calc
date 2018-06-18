@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 /**
  * Abstract base class that represents a stream of operands read from some
  * source, e.g. sources could be a command line or a list of files.
@@ -20,7 +22,7 @@ class OperandStream
    *  If no more elements left returns false.
    *
    */
-  virtual bool getNext(double &aOutput) = 0;
+  virtual bool getNext(uint64_t &aOutput) = 0;
 
   virtual ~OperandStream() {}
 

@@ -22,7 +22,7 @@ class OperandStreamString : public OperandStream
       }
     }
 
-    bool getNext(double &a_next);
+    bool getNext(uint64_t &a_next);
 
     virtual ~OperandStreamString() {}
 

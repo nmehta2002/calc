@@ -5,9 +5,9 @@
 #include <cassert>
 
 
-bool OperandStreamFile::getNext(double &aNext)
+bool OperandStreamFile::getNext(uint64_t &aNext)
 {
-  double nextValue;
+  uint64_t nextValue;
 
   /**
    *

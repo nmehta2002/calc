@@ -4,6 +4,7 @@
 #include "EngineFactory.h"
 #include "EngineRegistrationHelper.h"
 
+
 static EngineRegistrationHelper<EngineDivide>
   engineRegistration(
     "divider",
@@ -11,16 +12,16 @@ static EngineRegistrationHelper<EngineDivide>
       EngineFactory::ENGINE_IN_OPT_FILE_LIST});
 
 
-double EngineDivide::run()
+uint64_t EngineDivide::run()
 {
-  double result;
+  uint64_t result;
 
   if (!_mPOperandStream->getNext(result))
   {
     throw std::runtime_error("Null input");
   }
 
-  double operand;
+  uint64_t operand;
 
   while (_mPOperandStream->getNext(operand))
   {

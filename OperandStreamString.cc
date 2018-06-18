@@ -4,7 +4,7 @@
 #include <string>
 #include <iostream>
 
-bool OperandStreamString::getNext(double &aNext)
+bool OperandStreamString::getNext(uint64_t &aNext)
 {
   try
   {

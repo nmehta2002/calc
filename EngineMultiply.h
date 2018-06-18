@@ -27,7 +27,7 @@ public:
    */
   static std::unique_ptr<Engine> make(std::unique_ptr<OperandStream> aPOperandStream);
 
-  double run() final;
+  uint64_t run() final;
 
   virtual ~EngineMultiply() {}
 
