@@ -19,8 +19,9 @@
  *   2. A run() method that implements the engine specific computation and
  *   returns the result.
  *
- *   3. Register the engine with the EngineFactory using EngineRegistrationHelper
- *      Follow EngineDivide.cc, should be straight forward.
+ *   3. Register the engine with the EngineFactory using
+ *      EngineRegistrationHelper. Follow EngineDivide.cc, should be
+ *      straight forward.
  *
  */
 class Engine

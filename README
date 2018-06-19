@@ -11,6 +11,7 @@ How to build
 Run:
 ./build_and_run_tsts
 
+The above command will both build and run unit-tests.
 ===============================================================================
 How to run
 ===============================================================================
@@ -62,6 +63,10 @@ More documentation
 The doc directoy has brief documentation around the other classes in the 
 frame-work. Also the examples directory has implementation of an engine to 
 SUM integers.
-
+===============================================================================
+Other info
+===============================================================================
+The C++ unit-tests start with prefix, there are 2 C++ unit tests 
+tstOperandStream and tstEngineDivide.
 
 
