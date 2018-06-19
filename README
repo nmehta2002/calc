@@ -60,7 +60,8 @@ already existing engine like EngineDivide.
 More documentation
 ===============================================================================
 The doc directoy has brief documentation around the other classes in the 
-frame-work.
+frame-work. Also the examples directory has implementation of an engine to 
+SUM integers.
 
 
 

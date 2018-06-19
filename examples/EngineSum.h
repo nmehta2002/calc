@@ -32,7 +32,7 @@ public:
    */
   static std::unique_ptr<Engine> make(std::unique_ptr<OperandStream> aPOperandStream);
 
-  virtual uint64_t run() final;
+  virtual int64_t run() final;
 
   virtual ~EngineSum() {}
 
