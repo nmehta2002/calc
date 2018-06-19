@@ -54,6 +54,13 @@ Adding new engines should be straight forward.
 Thats it, once you do the above, the engine should now be callable from the 
 calc command.  The engine will also be listed in output of ./calc help
 with the appropriate input options. It should also be easy to follow an 
-already existing engine like EngineDivide. Also the doc directoy has brief 
-documentation around the other classes in the frame-work.
+already existing engine like EngineDivide. 
+
+===============================================================================
+More documentation
+===============================================================================
+The doc directoy has brief documentation around the other classes in the 
+frame-work.
+
+
 
