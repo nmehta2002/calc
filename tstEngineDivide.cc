@@ -39,6 +39,7 @@ void tstEngineDivideNegative()
   }
   catch(std::overflow_error& ofe)
   {
+    assert(true);	  
     std::cout<<"success."<<std::endl;
   }
 }

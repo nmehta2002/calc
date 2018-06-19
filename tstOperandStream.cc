@@ -144,9 +144,6 @@ void testOpStreamFileNegative()
   {
     std::cout<<"Testing testOpStreamFileNegativeNonExistentFile...";
 
-    // Setup multiple files, each with some values and an empty file,
-    // somewhere in middle.
-
     const char *strs[] = {"non-existent-file"};
 
     OperandStreamFile opStreamFile(strs, 1);
@@ -174,9 +171,6 @@ void testOpStreamFileNegative()
         file<<'A'<<std::endl;
       });
 
-    // Setup multiple files, each with some values and an empty file,
-    // somewhere in middle.
-
     const char *strs[] = {"nan_input"};
 
     OperandStreamFile opStreamFile(strs, 1);
@@ -187,6 +181,7 @@ void testOpStreamFileNegative()
     try
     {
       opStream.getNext(item);
+      assert(false);
     }catch(std::invalid_argument& inv)
     {
       assert(true);
