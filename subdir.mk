@@ -1,34 +1,18 @@
 # Add inputs and outputs from these tool invocations to the build variables 
-CC_SRCS += \
-EngineFactory.cc \
-EngineDivide.cc \
-EngineMultiply.cc \
-OperandStreamFile.cc \
-OperandStreamString.cc \
-calc.cc \
-tstOperandStream.cc \
-tstEngineDivide.cc
 
+ENGINES += \
+./EngineDivide.o \
+./EngineMultiply.o 
 
 OBJS += \
 ./EngineFactory.o \
-./EngineDivide.o \
-./EngineMultiply.o \
 ./OperandStreamFile.o \
-./OperandStreamString.o \
+./OperandStreamString.o 
+
+OBJS += $(ENGINES)
 
 PROG_OBJS += \
 ./calc.o 
-
-CC_DEPS += \
-./EngineFactory.d \
-./EngineDivide.d \
-./EngineMultiply.d \
-./OperandStreamFile.d \
-./OperandStreamString.d \
-
-PROG_CC_DEPS += \
-./calc.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

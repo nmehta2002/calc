@@ -105,13 +105,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afbde4490952eb4848953880395cfe426"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afbde4490952eb4848953880395cfe426"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>OperandStreamFile</b> (const char *const *aFiles, uint32_t aCount, const bool implicitTxtExt=true)</td></tr>
 <tr class="separator:afbde4490952eb4848953880395cfe426"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ff31bbc39f232543519ae0873f50e48"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperandStreamFile.html#a5ff31bbc39f232543519ae0873f50e48">getNext</a> (uint64_t &amp;aNext) final</td></tr>
-<tr class="separator:a5ff31bbc39f232543519ae0873f50e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a727fccfeb0fdb345a930d64fa2648469"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperandStreamFile.html#a727fccfeb0fdb345a930d64fa2648469">getNext</a> (int64_t &amp;aNext) final</td></tr>
+<tr class="separator:a727fccfeb0fdb345a930d64fa2648469"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class that implements a stream sourced from a set of files. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a5ff31bbc39f232543519ae0873f50e48"></a>
+<a class="anchor" id="a727fccfeb0fdb345a930d64fa2648469"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -121,7 +121,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">bool OperandStreamFile::getNext </td>
           <td>(</td>
-          <td class="paramtype">uint64_t &amp;&#160;</td>
+          <td class="paramtype">int64_t &amp;&#160;</td>
           <td class="paramname"><em>aOutput</em></td><td>)</td>
           <td></td>
         </tr>
@@ -142,7 +142,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>If unread elements exists returns true and element is returned in aOutput If no more elements left returns false. </dd></dl>
 <p>The loop below reads the next value from the current file, if the current file has has reached EOF it will open the next file and read the first value from the next file. The loop should also handle empty files, by just skipping over them.</p>
 
-<p>Implements <a class="el" href="classOperandStream.html#a3672627ee3694c797c7c4b5bb318fd82">OperandStream</a>.</p>
+<p>Implements <a class="el" href="classOperandStream.html#a2b7d9812304e0b4098e8ad2219172ee6">OperandStream</a>.</p>
 
 </div>
 </div>

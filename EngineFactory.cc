@@ -3,7 +3,7 @@
 #include <sstream>
 #include <string.h>
 #include <cassert>
-
+#include <iostream>
 #include "OperandStream.h"
 #include "OperandStreamFile.h"
 #include "OperandStreamString.h"
@@ -32,8 +32,8 @@ void EngineFactory::
   if (!result.second)
   {
     std::ostringstream sstream;
-    sstream<<"Failed to register engine "<<aEngineName<<" engine with this name already exists."<<std::endl;
-    throw std::invalid_argument(sstream.str());
+    sstream<<"WARNING: Failed to register engine "<<aEngineName<<" engine with this name already exists."<<std::endl;
+    std::cerr<<sstream.str();
   }
 }
 

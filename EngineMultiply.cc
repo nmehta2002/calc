@@ -3,6 +3,9 @@
 #include <memory>
 #include "EngineFactory.h"
 #include "EngineRegistrationHelper.h"
+#include <stdlib.h>
+#include <sstream>
+
 
 static EngineRegistrationHelper<EngineMultiply>
   engineRegistration("multiplier",
@@ -22,11 +25,17 @@ int64_t EngineMultiply::run()
 
   while (_mPOperandStream->getNext(operand))
   {
-    result *= operand;
+
+    /**
+     * Note: I am not catching overflow errors here.
+     * Can use a library like SafeInt to catch these errors.
+     */
+    result = result * operand;
   }
 
   return (result);
 }
+
 
 // static
 std::unique_ptr<Engine> EngineMultiply::make(std::unique_ptr<OperandStream> aPOperandStream)

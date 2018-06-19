@@ -46,8 +46,7 @@ Adding new engines should be straight forward.
       { EngineFactory::ENGINE_IN_OPT_NUMBER_LIST,
         EngineFactory::ENGINE_IN_OPT_FILE_LIST});
 
-  - Add the new engine modules to subdir.mk, follow examples for other 
-    pre-existing engines.
+  - Add the new engine modules to subdir.mk, list the engine in ENGINES list.
 
   - Compile and build.
     ./build_and_run_tsts

@@ -29,6 +29,7 @@ public:
 
   int64_t run() final;
 
+
   virtual ~EngineMultiply() {}
 
 private:
@@ -38,5 +39,7 @@ private:
   EngineMultiply(EngineMultiply &);
 
   std::unique_ptr<OperandStream> _mPOperandStream;
+
+  int64_t _safeMultiply(int64_t aOp1, int64_t aOp2);
 
 };
